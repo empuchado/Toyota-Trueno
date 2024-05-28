@@ -18,11 +18,30 @@
 h1, .h1, h5, .h5 {
   font-family: "HelveticaNeue", sans-serif;
   font-weight: bold;
+}
+
+.grad-type {
+  font-family: "HelveticaNeue", sans-serif;
   background: linear-gradient(360deg, #9e9e9e, #b7b7b7, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
 }
 
 /*!

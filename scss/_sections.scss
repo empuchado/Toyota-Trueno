@@ -10,15 +10,31 @@
 h1, h5{ 
     font-family: 'HelveticaNeue', sans-serif;
     font-weight: bold;
+}
 
-    background: linear-gradient( 360deg, #9e9e9e, #b7b7b7, #ffffff);
+.grad-type {
+  font-family: 'HelveticaNeue', sans-serif;
+  background: linear-gradient( 360deg, #9e9e9e, #b7b7b7, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-weight: bold;
 }
 
+.carousel-inner {
+  @media (min-width: 768px) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
 
+.carousel-item {
+  @media (min-width: 768px) {
+    flex: 0 0 33.333%; // Adjust based on the number of items to display
+    max-width: 33.333%; // Adjust based on the number of items to display
+  }
+}
 
 
 
