@@ -1,6 +1,8 @@
-$gray-900: rgba(2, 2, 2, 1); // Set your custom background color here
+$theme-colors: (
+  secondary: rgba(0, 0, 0, 0.5) // Change the alpha value to your desired opacity
+);
 
 body{
-    font-family: 'HelveticaNeue', sans-serif;
+    font-family: 'HelveticaNeue', sans-serif !important; 
     font-weight: 500;
 }
