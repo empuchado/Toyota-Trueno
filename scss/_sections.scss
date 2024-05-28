@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../font/helveticaneue.woff);
+  }
+  
+
+
+
+
+h1, h5{ 
+    font-family: 'HelveticaNeue', sans-serif;
+    font-weight: bold;
+
+    background: linear-gradient( 360deg, #9e9e9e, #b7b7b7, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
