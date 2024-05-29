@@ -1,8 +1,18 @@
 $theme-colors: (
   secondary: rgba(0, 0, 0, 0.5) // Change the alpha value to your desired opacity
 );
-$card-bg:red;
+$card-bg:rgb(129, 129, 129);
 body{
     font-family: 'HelveticaNeue', sans-serif !important; 
     font-weight: 500;
+}
+$display-font-weight: 700;
+$headings-font-weight: 700;
+
+.custom-container {
+  @media (min-width: 768px) {
+    max-width: 90vw !important; // Override Bootstrap container width
+    padding-left: 0 !important; // Remove left padding
+    padding-right: 0 !important; // Remove right padding
+  }
 }

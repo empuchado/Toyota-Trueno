@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Toyota Trueno</title>
     <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
   </head>
   <body>
     <header class="bg-dark">
@@ -39,17 +40,22 @@
         class="hero d-flex flex-column justify-content-center align-items-center"
       >
         <h1 class="display-1 text-center grad-type">Toyota Trueno</h1>
-        <h5 class="text-center grad-type">La leyenda del asfalto</h5>
-        <a href="" class="text-center text-decoration-none text-white">Ver más imágenes</a>
+        <h4 class="text-center grad-type">La leyenda del asfalto</h4>
+        <small class="">
+          <a href="" class="text-center text-decoration-none text-white fw-bold">Ver más imágenes</a>
+        </small>
+        <i class="bi bi-arrow-down-circle-fill text-white fs-1"></i>
+
       </div>
+      
     </header>
     <main>
-      <section class="sec-w mt-3 " >
-        <div class="d-flex flex-column flex-md-row container">
-          <ul class="list-unstyled no-decoration">
-            <li class="flex-fill flex-item">
+      <section class="sec-w mt-3" >
+        <div class=" container px-4 ">
+          <div class=" row justify-content-between px-1 my-1 px-md-5 my-md-5">
+            <div class="col-12 col-md-3 flex-fill">
               <h2>Historia del Toyota Trueno</h2>
-              <p class="text-muted .font-weight-light">
+              <p class="text-muted font-weight-light">
                 El Toyota Trueno, también conocido como AE86, debutó en 1983 y
                 rápidamente se convirtió en una leyenda. Con su tracción trasera,
                 manejo preciso y un motor que ofrecía una emocionante experiencia
@@ -58,8 +64,8 @@
                 cultura del drifting y en el anime "Initial D", donde el Trueno se
                 convirtió en el protagonista indiscutible.
               </p>
-            </li>
-            <li class="flex-fill flex-item">
+            </div>
+            <div class="col-12 col-md-3 flex-fill">
               <h2>Diseño y Rendimiento</h2>
               <p class="text-muted">
                 El diseño del Toyota Trueno es una mezcla perfecta de estilo
@@ -68,9 +74,9 @@
                 está equipado con el motor 4A-GE, conocido por su fiabilidad y
                 rendimiento.
               </p>
-              <a class="text-decoration-none text-black" href="">Aprende mas sobre sus especificaciones</a>
-            </li>
-            <li class="flex-fill flex-item">
+              <a class="text-decoration-none text-black fw-bold" href="">Aprende sobre sus especificaciones <i class="bi bi-arrow-right text-black"></i> </a>
+            </div>
+            <div class="col-12 col-md-3 flex-fill mt-3 mt-md-0">
               <h2>Cultura y Legado</h2>
               <p class="text-muted">
                 El Toyota Trueno no es solo un coche, es un símbolo de una era y
@@ -78,73 +84,73 @@
                 fundamental en la escena del tuning y el drifting, el Trueno sigue
                 siendo un referente para los entusiastas del motor.
               </p>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
         
       </section>
-      <section class="sec-b bg-secondary mt-2 ">
-        <div class="container ">
+      <section class="sec-b bg-secondary mt-2 justify-content-center d-flex">
+        <div class="container mx-md-1 custom-container ">
           <h2 class="text-center text-white pt-5 pb-5">
             Momentos icónicos del Toyota Trueno
           </h2>
           <div
             id="carouselExampleSlidesOnly"
-            class="carousel slide pb-5 container "
-            data-bs-ride="carousel "
+            class="carousel slide pb-5"
+            data-bs-ride="carousel"
+            data-bs-interval="2000"
           >
             <div class="carousel-inner d-md-flex ">
-              <div class="card carousel-item active bg-primary ">
+              <div class="card carousel-item active ">
                 <div class="row justify-content-center align-items-center ">
-                  <div class="col-md-6  pt-3 ">
-                    <h4 class="text-center">El nacimiento del Trueno</h4>
+                  <div class=" col-9 col-md-10 pt-3 ">
+                    <h4 class="text-center text-white">El nacimiento del Trueno</h4>
                     <div style="display: flex; justify-content: center">
                       <img src="imgs/carru-1.png" alt="" />
                     </div>
-                    <p class="text-center mt-4">
+                    <p class="text-center mt-4 text-white">
                       El Toyota Trueno AE86 hace su debut en 1983, marcando el
                       comienzo de una era para los autos deportivos compactos.
                     </p>
                   </div>
                 </div>
               </div>
-  
-              <div class="card carousel-item ">
-                <div class="row justify-content-center align-items-center">
-                  <div class="col-md-6 bg-secondary pt-3">
-                    <h4 class="text-center">El nacimiento del Trueno</h4>
+              <div class="card carousel-item active ">
+                <div class="row justify-content-center align-items-center ">
+                  <div class=" col-9 col-md-10 pt-3 ">
+                    <h4 class="text-center text-white">El nacimiento del Trueno</h4>
                     <div style="display: flex; justify-content: center">
-                      <img src="imgs/carru-2.png" alt="" />
+                      <img src="imgs/carru-1.png" alt="" />
                     </div>
-                    <p class="text-center mt-4">
+                    <p class="text-center mt-4 text-white">
                       El Toyota Trueno AE86 hace su debut en 1983, marcando el
                       comienzo de una era para los autos deportivos compactos.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="card carousel-item ">
-                <div class="row justify-content-center align-items-center">
-                  <div class="col-md-6 bg-secondary pt-3">
-                    <h4 class="text-center">El nacimiento del Trueno</h4>
+              <div class="card carousel-item active ">
+                <div class="row justify-content-center align-items-center ">
+                  <div class=" col-9 col-md-10 pt-3 ">
+                    <h4 class="text-center text-white">El nacimiento del Trueno</h4>
                     <div style="display: flex; justify-content: center">
-                      <img src="imgs/carru-3.png" alt="" />
+                      <img src="imgs/carru-1.png" alt="" />
                     </div>
-                    <p class="text-center mt-4">
+                    <p class="text-center mt-4 text-white">
                       El Toyota Trueno AE86 hace su debut en 1983, marcando el
                       comienzo de una era para los autos deportivos compactos.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="card carousel-item ">
-                <div class="row justify-content-center align-items-center">
-                  <div class="col-md-6 bg-secondary pt-3">
-                    <h4 class="text-center">El nacimiento del Trueno</h4>
+              <div class="card carousel-item active ">
+                <div class="row justify-content-center align-items-center ">
+                  <div class=" col-9 col-md-10 pt-3 ">
+                    <h4 class="text-center text-white">El nacimiento del Trueno</h4>
                     <div style="display: flex; justify-content: center">
-                      <img src="imgs/carru-4.png" alt="" />
+                      <img src="imgs/carru-1.png" alt="" />
                     </div>
-                    <p class="text-center mt-4">
+                    <p class="text-center mt-4 text-white">
                       El Toyota Trueno AE86 hace su debut en 1983, marcando el
                       comienzo de una era para los autos deportivos compactos.
                     </p>
@@ -180,12 +186,14 @@
     <script>
       $(document).ready(function() {
         function handleCarousel() {
+          
           if ($(window).width() >= 768) {
             $('#carouselExampleSlidesOnly').carousel('dispose'); // Stop the carousel
             $('.carousel-item').addClass('active'); // Make all items active
 
           } else {
             $('#carouselExampleSlidesOnly').find('.carousel-item').removeClass('active'); // Remove active class
+            
             $('#carouselExampleSlidesOnly').find('.carousel-item:first').addClass('active'); // Set only the first item active
             $('#carouselExampleSlidesOnly').carousel(); // Initialize the carousel
           }

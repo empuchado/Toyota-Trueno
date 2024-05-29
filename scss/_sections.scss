@@ -1,15 +1,7 @@
-@font-face {
-    font-family: 'HelveticaNeue';
-    src: url(../font/helveticaneue.woff);
-  }
-  
-
-
-
 
 h1, h5{ 
-    font-family: 'HelveticaNeue', sans-serif;
-    font-weight: bold;
+    font-family:"Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
+    font-weight: 100;
 }
 
 .grad-type {
@@ -23,18 +15,40 @@ h1, h5{
 }
 
 .carousel-inner {
+
+  
+
   @media (min-width: 768px) {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
   }
 }
 
 .carousel-item {
   @media (min-width: 768px) {
-    flex: 0 0 33.333%; // Adjust based on the number of items to display
-    max-width: 33.333%; // Adjust based on the number of items to display
+    flex: 0 0 20%; // Adjust based on the number of items to display
+    max-width: 20%; // Adjust based on the number of items to display
+    margin-right: 2rem !important;
+    margin-right: 2rem; // Add your desired margin
   }
 }
 
 
+.sec-w {
+  .container {
+      max-width: 100%;
+  }
+  .row {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .col-md-4 {
+      display: flex;
+      flex-direction: column;
+  }
 
+  p{
+    font-weight: 400;
+  }
+}
