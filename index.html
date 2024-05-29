@@ -98,7 +98,7 @@
             id="carouselExampleSlidesOnly"
             class="carousel slide pb-5"
             data-bs-ride="carousel"
-            data-bs-interval="2000"
+            data-bs-interval="4000"
           >
             <div class="carousel-inner d-md-flex ">
               <div class="card carousel-item active ">
@@ -162,23 +162,24 @@
         </div>
         
       </section>
-      <section class="sec-w container d-flex justify-content-center flex-column mt-5">
+      <section class="sec-w container d-flex justify-content-center flex-column mt-5 col-6">
         <h2 class="text-center">Y ahora qué?</h2>
-        <p>
+        <p class="text-muted mt-3">
           La "E" en el nombre del legendario AE86 de Toyota estaba ahí para
           designarlo como Corolla, pero ¿no sería genial que en su lugar
           significara "eléctrico"?
         </p>
-        <p>
+        <p class="text-muted mt-3">
           Al parecer, alguien en la empresa pensó que sí: Toyota muestra una
           versión conceptual de cómo sería el icono de los 80 si funcionara con
           baterías (o hidrógeno). Los dos coches se exhiben en el Salón del
           Automóvil de Tokio, que se celebra del 13 al 15 de enero. Y puedes
           inscribirte para participar del evento.
         </p>
-        <a class="text-center btn btn-dark" href="">Inscribete aqui</a>
-        <br />
-        <a class="text-center text-muted text-decoration-none" href="">Volver al inicio</a>
+        <a class="text-center btn btn-secondary mt-5  " href=""> <p class="grad-type fw-bold text-center my-1">Inscribete aqui</p></a>
+        <br/>
+        <a class="text-center text-muted text-decoration-none fw-bold mt-3"  href="">Volver al inicio</a>
+        <i class="bi bi-arrow-up text-center mb-3"></i>
       </section>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -186,15 +187,15 @@
     <script>
       $(document).ready(function() {
         function handleCarousel() {
-          
           if ($(window).width() >= 768) {
             $('#carouselExampleSlidesOnly').carousel('dispose'); // Stop the carousel
             $('.carousel-item').addClass('active'); // Make all items active
-
+            $('#carouselExampleSlidesOnly').removeAttr('data-bs-interval'); // Remove data-bs-interval attribute to disable autoplay
+            $('#carouselExampleSlidesOnly').removeAttr('data-bs-ride'); // Remove data-bs-interval attribute to disable autoplay
           } else {
             $('#carouselExampleSlidesOnly').find('.carousel-item').removeClass('active'); // Remove active class
-            
             $('#carouselExampleSlidesOnly').find('.carousel-item:first').addClass('active'); // Set only the first item active
+            $('#carouselExampleSlidesOnly').attr('data-bs-interval', '2000'); // Set data-bs-interval attribute to enable autoplay with 2s interval
             $('#carouselExampleSlidesOnly').carousel(); // Initialize the carousel
           }
         }

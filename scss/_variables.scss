@@ -1,5 +1,5 @@
 $theme-colors: (
-  secondary: rgba(0, 0, 0, 0.5) // Change the alpha value to your desired opacity
+  secondary: rgba(0, 0, 0, 1) // Change the alpha value to your desired opacity
 );
 $card-bg:rgb(129, 129, 129);
 body{
@@ -16,3 +16,5 @@ $headings-font-weight: 700;
     padding-right: 0 !important; // Remove right padding
   }
 }
+
+$card-border-radius:20px
