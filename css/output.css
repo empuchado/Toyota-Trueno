@@ -8351,11 +8351,9 @@ h1, .h1, h5, .h5 {
   font-size: 1.2rem;
 }
 
-.sec-form {
-  height: 100vh;
-}
-.sec-form h1, .sec-form .h1 {
-  font-size: 5rem;
+.form-section {
+  background-image: url("../imgs/inside.webp");
+  object-fit: cover;
 }
 
 .container {
@@ -8397,7 +8395,12 @@ h1, .h1, h5, .h5 {
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  height: 70px;
+}
+.form-group #submitButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: larger;
 }
 .form-group label {
   display: block;
@@ -8410,10 +8413,14 @@ h1, .h1, h5, .h5 {
 .form-group .btn {
   border: solid 3px white;
   width: 100%;
-  height: 100%;
 }
 .form-group .btn .grad-type {
   margin: 0;
+}
+@media (min-width: 758px) {
+  .form-group {
+    height: 50px;
+  }
 }
 
 body {
@@ -10532,7 +10539,7 @@ progress {
   appearance: none;
   background-color: var(--bs-body-bg);
   background-clip: padding-box;
-  border: 3px solid var(--bs-border-color);
+  border: 3px solid rgba(128, 128, 128, 0.5);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -10685,7 +10692,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 3px solid var(--bs-border-color);
+  border: 3px solid rgba(128, 128, 128, 0.5);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -11071,7 +11078,7 @@ textarea.form-control-lg {
   text-align: center;
   white-space: nowrap;
   background-color: var(--bs-tertiary-bg);
-  border: 3px solid var(--bs-border-color);
+  border: 3px solid rgba(128, 128, 128, 0.5);
   border-radius: var(--bs-border-radius);
 }
 

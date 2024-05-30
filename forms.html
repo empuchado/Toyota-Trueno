@@ -41,52 +41,60 @@
       </nav>
         </header>
         <main>
-            <section class=" h100 d-flex justify-content-center align-items-center" >
-
-                <div class="container-fluid ">
-                    <div>
-                        <h1 class="grad-type pt-5 pr-md-2 mx-5 d-flex justify-content-center align-items-center mb-5">Inscribirse al evento</h1>
-                        <div class="d-flex align-items-center justify-content-start container">
-                          <div class="mx-5">
-                            <form class="form-container px-0" id="registrationForm" netlify>
-                              <div class="form-row">
-                                <div class="form-group">
-                                  <input type="text" class="form-control bg-secondary text-white" id="nombre" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                  <input type="text" class="form-control bg-secondary text-white" id="apellido" placeholder="Apellido">
-                                </div>
-                              </div>
-                              <div class="form-row">
-                                <div class="form-group">
-                                  <input type="email" class="form-control bg-secondary text-white" id="email" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                  <input type="tel" class="form-control bg-secondary text-white" id="telefono" placeholder="Nro Teléfono">
-                                </div>
-                              </div>
-                              <div class="form-row">
-                                <div class="form-group">
-                                  <label for="fecha" class="text-white">Fecha que desea asistir</label>
-                                  <select class="form-control bg-secondary text-white" id="fecha">
-                                    <option value="15-2">15/2</option>
-                                    <option value="16-2">16/2</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class="form-row mt-md-4 d-flex justify-content-center justify-content-md-end">
-                                <div class="form-group text-center">
-                                  <button type="submit" class="text-center btn btn-secondary py-2"><p class="grad-type">Inscribirse</p></button>
-                                </div>
-                              </div>
-                            </form>
-                            <p class="mt-3 mx-5 text-white fw-bold text-center">Al inscribirse, acepta los términos y condiciones.</p>
-                          </div>
+          <section class="h100 d-flex justify-content-center align-items-center form-section">
+            <div class="container-fluid">
+              <div>
+                <h1 class="grad-type pt-5 pr-md-2 mx-5 d-flex justify-content-center align-items-center mb-5">Inscribirse al evento</h1>
+                <div class="d-flex align-items-center justify-content-start container">
+                  <div class="mx-5">
+                    <form class="form-container px-0" id="registrationForm" netlify>
+                      <div class="form-row">
+                        <div class="form-group" >
+                          <input type="text" class="form-control bg-secondary text-white" id="nombre" placeholder="Nombre">
+                          <small id="nombreError" class="form-text text-danger text-white"></small>
+                        </div>
+                        <div class="form-group" >
+                          <input type="text" class="form-control bg-secondary text-white" id="apellido" placeholder="Apellido">
+                          <small id="apellidoError" class="form-text text-danger text-white"></small>
                         </div>
                       </div>
-                    </div>
-
-            </section>
+                      <div class="form-row">
+                        <div class="form-group" >
+                          <input type="email" class="form-control bg-secondary text-white" id="email" placeholder="Email">
+                          <small id="emailError" class="form-text text-danger text-white"></small>
+                        </div>
+                        <div class="form-group" >
+                          <input type="tel" class="form-control bg-secondary text-white" id="telefono" placeholder="Nro Teléfono">
+                          <small id="telefonoError" class="form-text text-danger text-white"></small>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group" >
+                          <label for="fecha" class="text-white">Fecha que desea asistir</label>
+                          <select class="form-control bg-secondary text-white" id="fecha">
+                            <option value="15-2">15/2</option>
+                            <option value="16-2">16/2</option>
+                          </select>
+                          <small id="fechaError" class="form-text text-danger text-white"></small>
+                        </div>
+                      </div>
+                      <div class="form-row mt-md-4 d-flex justify-content-center justify-content-md-end">
+                        <div class="form-group text-center">
+                          <button type="submit" class="text-center btn btn-secondary" id="submitButton" disabled>
+                            <p class="grad-type">Inscribirse</p>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <p class="mt-3 mx-5 text-white fw-bold text-center">Al inscribirse, acepta los términos y condiciones.</p>
+                  <p id="formSuccessMessage" class="mt-3 mx-5 text-white fw-bold text-center"></p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          
         </main>
 
 
@@ -96,68 +104,101 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          document.getElementById('registrationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registrationForm');
+        const submitButton = document.getElementById('submitButton');
+        const formSuccessMessage = document.getElementById('formSuccessMessage');
     
-            // Form validation
-            let isValid = true;
+        const fields = {
+          nombre: {
+            element: document.getElementById('nombre'),
+            errorElement: document.getElementById('nombreError'),
+            validator: value => value.trim() !== '',
+            errorMessage: 'Por favor, ingrese su nombre.',
+            touched: false
+          },
+          apellido: {
+            element: document.getElementById('apellido'),
+            errorElement: document.getElementById('apellidoError'),
+            validator: value => value.trim() !== '',
+            errorMessage: 'Por favor, ingrese su apellido.',
+            touched: false
+          },
+          email: {
+            element: document.getElementById('email'),
+            errorElement: document.getElementById('emailError'),
+            validator: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+            errorMessage: 'Por favor, ingrese un email válido.',
+            touched: false
+          },
+          telefono: {
+            element: document.getElementById('telefono'),
+            errorElement: document.getElementById('telefonoError'),
+            validator: value => value.trim() !== '',
+            errorMessage: 'Por favor, ingrese su número de teléfono.',
+            touched: false
+          },
+          fecha: {
+            element: document.getElementById('fecha'),
+            errorElement: document.getElementById('fechaError'),
+            validator: value => value !== '',
+            errorMessage: 'Por favor, seleccione una fecha.',
+            touched: false
+          }
+        };
     
-            // Get form fields
-            const nombre = document.getElementById('nombre').value.trim();
-            const apellido = document.getElementById('apellido').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const fecha = document.getElementById('fecha').value;
+        Object.values(fields).forEach(field => {
+          field.element.addEventListener('blur', () => {
+            field.touched = true;
+            validateField(field);
+            validateForm();
+          });
     
-            // Validate nombre
-            if (!nombre) {
-              isValid = false;
-              alert('Por favor, ingrese su nombre.');
+          field.element.addEventListener('input', () => {
+            if (field.touched) {
+              validateField(field);
+              validateForm();
             }
+          });
+        });
     
-            // Validate apellido
-            if (!apellido) {
-              isValid = false;
-              alert('Por favor, ingrese su apellido.');
-            }
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+          let allValid = true;
     
-            // Validate email
-            if (!email) {
-              isValid = false;
-              alert('Por favor, ingrese su email.');
-            } else if (!validateEmail(email)) {
-              isValid = false;
-              alert('Por favor, ingrese un email válido.');
-            }
-    
-            // Validate telefono
-            if (!telefono) {
-              isValid = false;
-              alert('Por favor, ingrese su número de teléfono.');
-            }
-    
-            // Validate fecha
-            if (!fecha) {
-              isValid = false;
-              alert('Por favor, seleccione una fecha.');
-            }
-    
-            // If form is valid, you can proceed with form submission (e.g., send data to the server)
-            if (isValid) {
-              alert('Formulario enviado con éxito.');
-              // You can submit the form programmatically or via AJAX here.
-              // For now, we will just reset the form.
-              document.getElementById('registrationForm').reset();
+          Object.values(fields).forEach(field => {
+            field.touched = true;
+            if (!validateField(field)) {
+              allValid = false;
             }
           });
     
-          // Function to validate email format
-          function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
+          if (allValid) {
+            formSuccessMessage.textContent = 'Formulario enviado con éxito.';
+            form.reset();
+            Object.values(fields).forEach(field => field.errorElement.textContent = '');
+            validateForm();
           }
         });
-      </script>
+    
+        function validateField(field) {
+          const value = field.element.value;
+          if (!field.validator(value)) {
+            field.errorElement.textContent = field.errorMessage;
+            field.errorElement.classList.add('text-white');
+            return false;
+          } else {
+            field.errorElement.textContent = '';
+            return true;
+          }
+        }
+    
+        function validateForm() {
+          const allValid = Object.values(fields).every(field => field.validator(field.element.value));
+          submitButton.disabled = !allValid;
+        }
+      });
+    </script>
+    
 </body>
 </html>

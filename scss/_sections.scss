@@ -95,12 +95,9 @@ object-fit: contain;
 
 
 
-.sec-form{
-  height: 100vh;
-
-  h1{
-    font-size: 5rem;
-  }
+.form-section{
+  background-image: url("../imgs/inside.webp");
+  object-fit: cover; 
 }
 
 
@@ -149,7 +146,13 @@ input{
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  height: 70px;
+
+  #submitButton {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: larger;
+  }
 
   label {
       display: block;
@@ -164,11 +167,14 @@ input{
   .btn{
     border: solid 3px white;
     width: 100%;
-    height: 100%;
 
     .grad-type{
       margin: 0;
     }
+  }
+
+  @media (min-width: 758px) {
+      height: 50px;
   }
 
 
