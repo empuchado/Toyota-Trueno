@@ -8246,6 +8246,15 @@ img {
   margin-bottom: 5vh;
 }
 
+.intro {
+  height: 100vh;
+}
+.intro video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 h1, .h1, h5, .h5 {
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
   font-weight: 100;
