@@ -47,31 +47,31 @@
                 <h1 class="grad-type pt-5 pr-md-2 mx-5 d-flex justify-content-center align-items-center mb-5">Inscribirse al evento</h1>
                 <div class="d-flex align-items-center justify-content-start container">
                   <div class="mx-5">
-                    <form class="form-container px-0" id="registrationForm" netlify>
+                    <form name="form" method="POST" class="form-container px-0" id="registrationForm" netlify>
                       <div class="form-row">
                         <div class="form-group" >
-                          <input type="text" class="form-control bg-secondary text-white" id="nombre" placeholder="Nombre">
+                          <input type="text" name="nombre" class="form-control bg-secondary text-white" id="nombre" placeholder="Nombre">
                           <small id="nombreError" class="form-text text-danger text-white"></small>
                         </div>
                         <div class="form-group" >
-                          <input type="text" class="form-control bg-secondary text-white" id="apellido" placeholder="Apellido">
+                          <input type="text" name="apellido" class="form-control bg-secondary text-white" id="apellido" placeholder="Apellido">
                           <small id="apellidoError" class="form-text text-danger text-white"></small>
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group" >
-                          <input type="email" class="form-control bg-secondary text-white" id="email" placeholder="Email">
+                          <input type="email" name="email" class="form-control bg-secondary text-white" id="email" placeholder="Email">
                           <small id="emailError" class="form-text text-danger text-white"></small>
                         </div>
                         <div class="form-group" >
-                          <input type="tel" class="form-control bg-secondary text-white" id="telefono" placeholder="Nro Teléfono">
+                          <input type="tel" name="telefono" class="form-control bg-secondary text-white" id="telefono" placeholder="Nro Teléfono">
                           <small id="telefonoError" class="form-text text-danger text-white"></small>
                         </div>
                       </div>
                       <div class="form-row">
                         <div class="form-group" >
                           <label for="fecha" class="text-white">Fecha que desea asistir</label>
-                          <select class="form-control bg-secondary text-white" id="fecha">
+                          <select name="Fecha[]" class="form-control bg-secondary text-white" id="fecha">
                             <option value="15-2">15/2</option>
                             <option value="16-2">16/2</option>
                           </select>
