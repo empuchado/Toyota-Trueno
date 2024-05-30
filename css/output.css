@@ -8225,24 +8225,19 @@
   content: "賈";
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 .hero {
   height: 100vh;
-  background-image: url("../imgs/hero image 1.png");
+  background-image: url("../imgs/hero-image-1.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #000;
 }
 .hero h1, .hero .h1 {
-  margin-top: 60vh;
+  margin-top: 30vh;
 }
 .hero i {
-  margin-top: 15vh;
+  margin-top: 30vh;
   margin-bottom: 5vh;
 }
 
@@ -8278,9 +8273,28 @@ img {
     background-position: 100% 100%;
   }
 }
+img {
+  width: 100%;
+  height: auto;
+}
+
 h1, .h1, h5, .h5 {
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
   font-weight: 100;
+}
+
+.hover-links {
+  transition: 500ms;
+}
+.hover-links:hover {
+  font-size: large;
+}
+
+.btn .hover-links {
+  transition: 500ms;
+}
+.btn .hover-links:hover {
+  font-size: larger;
 }
 
 .grad-type {
@@ -8291,6 +8305,11 @@ h1, .h1, h5, .h5 {
   background-clip: text;
   color: transparent;
   font-weight: bold;
+}
+
+.sec-b {
+  background-image: url(../imgs/front-side.webp);
+  object-fit: contain;
 }
 
 @media (min-width: 768px) {

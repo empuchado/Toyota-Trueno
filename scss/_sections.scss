@@ -1,8 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+img{
+    width: 100%;
+    height: auto;
+}
 
 h1, h5{ 
     font-family:"Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
     font-weight: 100;
 }
+
+.hover-links{
+
+  transition: 500ms;
+  &:hover{
+    font-size: large;
+    
+  }
+}
+
+.btn .hover-links{
+  transition: 500ms;
+  &:hover{
+    font-size: larger;
+    
+  }
+}
+
+
 
 .grad-type {
   font-family: 'HelveticaNeue', sans-serif;
@@ -12,6 +37,11 @@ h1, h5{
   background-clip: text;
   color: transparent;
   font-weight: bold;
+}
+
+.sec-b {
+  background-image: url(../imgs/front-side.webp) ;
+object-fit: contain;
 }
 
 .carousel-inner {
@@ -26,6 +56,7 @@ h1, h5{
 }
 
 .carousel-item {
+
   @media (min-width: 768px) {
     flex: 0 0 20%; // Adjust based on the number of items to display
     max-width: 20%; // Adjust based on the number of items to display

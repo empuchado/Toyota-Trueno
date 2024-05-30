@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() {
     let lottieContainers = document.querySelectorAll('.animation');
 
