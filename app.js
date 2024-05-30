@@ -1,34 +1,58 @@
-const intro = document.querySelector(".intro");
-const video = intro.querySelector("video");
-const text = intro.querySelector("h1");
+document.addEventListener('DOMContentLoaded', function() {
+    let lottieContainers = document.querySelectorAll('.animation');
 
-//ScrollMagic
-const controller = new ScrollMagic.Controller();
+    if (lottieContainers.length > 0) {
+        LottieScrollTrigger({
+            trigger: ".animation",
+            start: "top center",
+            endTrigger: ".end-lottie",
+            end: `bottom center +=${document.querySelector(".animation").offsetHeight}`,
+            render: "svg",
+            target: ".animation",
+            path: "./Trueno.json",
+            scrub: 2,
+        });
+    }
+});
 
-//Scenes
-let scene = new ScrollMagic.Scene({
-    duration: 10000,
-    triggerElement: intro,
-    triggerHook: 0
-})
-    .addIndicators()
-    .setPin(intro)
-    .addTo(controller);
+function LottieScrollTrigger(vars){
+    let playhead = { frame: 0 },
+        target = gsap.utils.toArray(vars.target)[0],
+        speeds = { slow: "+=2000", medium: "+=2000", fast: "+=500" },
+        st = { 
+            trigger: vars.trigger || ".trigger",
+            end: speeds[vars.speed] || "+=1000",
+            scrub: 1,
+            markers: false,
+        },
+        ctx = gsap.context && gsap.context(),
+        animation = lottie.loadAnimation({
+            container: target,
+            renderer: vars.render || "svg",
+            loop: false,
+            autoplay: false,
+            path: vars.path,
+            rendererSettings: vars.rendererSettings || {
+                preserveAspectRatio: "xMidYMid slice"
+            },
+        });
 
+    for (let p in vars) {
+        st[p] = vars[p]; 
+    }
 
-
-    //Video Animation
-     
-    let accelamount = 0.1;
-    let scrollpos = 0;
-    let delay = 0;
-
-    scene.on("update", e => {
-        scrollpos = e.scrollPos / 1000;
+    animation.addEventListener("DOMLoaded", function() {
+        let createTween = function() {
+            animation.frameTween = gsap.to(playhead, {
+                frame: animation.totalFrames - 1,
+                ease: "none",
+                onUpdate: () => animation.goToAndStop(playhead.frame, true),
+                scrollTrigger: st,
+            });
+            return () => animation.destroy && animation.destroy();
+        };
+        ctx && ctx.add ? ctx.add(createTween) : createTween();
     });
 
-setInterval(() => {
-    delay += (scrollpos - delay) * accelamount;
-    video.currentTime = delay;
-}, 33.3)
-
+    return animation;
+}

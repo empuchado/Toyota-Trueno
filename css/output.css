@@ -8246,15 +8246,59 @@ img {
   margin-bottom: 5vh;
 }
 
-.intro {
-  height: 100vh;
-}
-.intro video {
-  height: 100%;
+body {
   width: 100%;
-  object-fit: cover;
+  height: 500vh;
+  background-color: black;
 }
 
+.lottie-container .animation {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+}
+.lottie-container .animation:after {
+  content: "";
+  background-image: "url(https://upload.wikimedia.org/wikipedia/commons/9/9a/512x512_Dissolve_Noise_Texture.png";
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  animation: animateGrain 8s steps(10) infinite;
+}
+.lottie-container .animation .gradient {
+  width: 100vw;
+  height: 200vh;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  z-index: -1;
+}
+
+.website-content {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+.end-lottie {
+  position: absolute;
+  top: 1000vh;
+  width: 100%;
+  height: 1px;
+}
+
+@keyframes animateGrain {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
 h1, .h1, h5, .h5 {
   font-family: "Helvetica Neue", HelveticaNeue, "TeX Gyre Heros", TeXGyreHeros, FreeSans, "Nimbus Sans L", "Liberation Sans", Arimo, Helvetica, Arial, sans-serif;
   font-weight: 100;
