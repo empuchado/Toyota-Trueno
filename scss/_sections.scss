@@ -96,6 +96,7 @@ object-fit: contain;
 
 .sec-form{
   width: 100vw;
+  background-image: url(../imgs/inside.webp);
 
   .hover-links{
     &:hover{
@@ -117,7 +118,15 @@ object-fit: contain;
   }
 }
 
+.form-row {
 
+  .btn{  border: 1px solid grey;
+
+    &:hover{
+      font-size: 2rem;
+    }}
+
+}
 
 
 
