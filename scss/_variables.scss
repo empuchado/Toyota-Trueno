@@ -18,6 +18,12 @@ $headings-font-weight: 700;
 }
 
 $card-border-radius:20px;
+$input-border-radius:15px;
 $input-btn-border-width: 3px;
 
 $input-border-color: rgba(128, 128, 128, 0.5);
+$input-placeholder-color: rgb(181, 181, 181);
+.form-control::placeholder {
+  font-size: .8rem;
+  font-weight: bold;
+}

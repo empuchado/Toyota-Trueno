@@ -94,91 +94,34 @@ object-fit: contain;
 }
 
 
+.sec-form{
+  width: 100vw;
 
-.form-section{
-  background-image: url("../imgs/inside.webp");
-  object-fit: cover; 
-}
-
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-container {
-  width: 100%;
-  max-width: 700px;
-
- .form-control{
-  color: #ffffff;
-
- 
- }
- input::placeholder {
-  color: white  ;
-  opacity: 1; // For Firefox
-}
-
-input{
-  color: white;
-}
-  
-
-  @media (min-width: 758px) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-
-      .form-group {
-          flex-basis: 33%;
-          margin-bottom: 1rem;
-      }
-
-      .form-row{
-        width: 45%;
-        margin: 0px;
-      }
-  }
-}
-
-.form-group {
-  height: 70px;
-
-  #submitButton {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: larger;
-  }
-
-  label {
-      display: block;
-      margin-bottom: 0.5rem;
-  }
-
-  input,
-  select {
-      width: 100%;
-  }
-
-  .btn{
-    border: solid 3px white;
-    width: 100%;
-
-    .grad-type{
-      margin: 0;
+  .hover-links{
+    &:hover{
+      font-size: 10rem;
     }
   }
 
-  @media (min-width: 758px) {
-      height: 50px;
+  form{
+    width: 70vw;
+
+    .row{
+
+      @media screen and (min-width: 768px) {
+        height: 100px;
+      }
+
+
+    }
   }
-
-
 }
+
+
+
+
+
+
 
 .espec-1 img{
   width: 100%;

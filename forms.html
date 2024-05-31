@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Toyota Trueno | Inscribirse</title>
-        <link rel="stylesheet" href="css/output.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-      </head>
-</head>
-<body class="bg-secondary">
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Toyota Trueno | Inscribirse</title>
+      <link rel="stylesheet" href="css/output.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      />
+    </head>
+  </head>
+  <body class="bg-secondary">
     <header class="bg-dark">
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary px-2 px-md-5">
-        <div class="container-fluid"> 
-          <a href="index.html" class="navbar-brand"><img src="imgs/Logo.webp" alt="" /></a>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary px-2 px-md-5"
+      >
+        <div class="container-fluid">
+          <a href="index.html" class="navbar-brand"
+            ><img src="imgs/Logo.webp" alt=""
+          /></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -26,179 +32,80 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav">
-              <li class="nav-item grad-type hover-links "><a class="nav-link grad-type  " href="tour.html">Galería</a></li>
               <li class="nav-item grad-type hover-links">
-                <a class="nav-link " href="">Especificaciones</a>
+                <a class="nav-link grad-type" href="tour.html">Galería</a>
               </li>
               <li class="nav-item grad-type hover-links">
-                <a class="nav-link " href="forms.html">Inscribite ya</a>
+                <a class="nav-link" href="">Especificaciones</a>
+              </li>
+              <li class="nav-item grad-type hover-links">
+                <a class="nav-link" href="forms.html">Inscribite ya</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-        </header>
-        <main>
-          <section class="h100 d-flex justify-content-center align-items-center form-section">
-            <div class="container-fluid">
-              <div>
-                <h1 class="grad-type pt-5 pr-md-2 mx-5 d-flex justify-content-center align-items-center mb-5">Inscribirse al evento</h1>
-                <div class="d-flex align-items-center justify-content-start container">
-                  <div class="mx-5">
-                    <form name="form" method="POST" class="form-container px-0" id="registrationForm" netlify>
-                      <div class="form-row">
-                        <div class="form-group" >
-                          <input type="text" name="nombre" class="form-control bg-secondary text-white" id="nombre" placeholder="Nombre">
-                          <small id="nombreError" class="form-text text-danger text-white"></small>
-                        </div>
-                        <div class="form-group" >
-                          <input type="text" name="apellido" class="form-control bg-secondary text-white" id="apellido" placeholder="Apellido">
-                          <small id="apellidoError" class="form-text text-danger text-white"></small>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group" >
-                          <input type="email" name="email" class="form-control bg-secondary text-white" id="email" placeholder="Email">
-                          <small id="emailError" class="form-text text-danger text-white"></small>
-                        </div>
-                        <div class="form-group" >
-                          <input type="tel" name="telefono" class="form-control bg-secondary text-white" id="telefono" placeholder="Nro Teléfono">
-                          <small id="telefonoError" class="form-text text-danger text-white"></small>
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group" >
-                          <label for="fecha" class="text-white">Fecha que desea asistir</label>
-                          <select name="Fecha[]" class="form-control bg-secondary text-white" id="fecha">
-                            <option value="15-2">15/2</option>
-                            <option value="16-2">16/2</option>
-                          </select>
-                          <small id="fechaError" class="form-text text-danger text-white"></small>
-                        </div>
-                      </div>
-                      <div class="form-row mt-md-4 d-flex justify-content-center justify-content-md-end">
-                        <div class="form-group text-center">
-                          <button type="submit" class="text-center btn btn-secondary" id="submitButton" disabled>
-                            <p class="grad-type">Inscribirse</p>
-                          </button>
-                        </div>
-                      </div>
-                    </form>
+    </header>
+    <main>
+      <section
+        class="h100 d-flex justify-content-center align-items-center text-white sec-form">
+          <form netlify>
+              <div class="row">
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="nombre">Nombre:</label>
+                      <input type="text" class="form-control mb-4 bg-black text-white" id="nombre" placeholder="Juan">
                   </div>
-                  <p class="mt-3 mx-5 text-white fw-bold text-center">Al inscribirse, acepta los términos y condiciones.</p>
-                  <p id="formSuccessMessage" class="mt-3 mx-5 text-white fw-bold text-center"></p>
-                </div>
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="apellido">Apellido:</label>
+                      <input type="text" class="form-control mb-4 bg-black text-white" id="apellido" placeholder="Perez">
+                  </div>
               </div>
-            </div>
-          </section>
-          
-          
-        </main>
+              <div class="row">
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="email">Correo Electrónico:</label>
+                      <input type="email" class="form-control mb-4 bg-black text-white" id="email" placeholder="juan@mail.com">
+                  </div>
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="pais">País de Residencia:</label>
+                      <input type="text" class="form-control mb-4 bg-black text-white" id="pais" placeholder="Uruguay">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="telefono">Teléfono:</label>
+                      <input type="tel" class="form-control mb-4 bg-black text-white" id="telefono" placeholder="Teléfono">
+                  </div>
+                  <div class="form-group col-12 col-md-6">
+                      <label class="form-label fw-bold" for="fecha">Fecha en la que desea participar:</label>
+                      <select class="form-control mb-4 bg-black text-white" id="fecha">
+                          <option value="15-2">15-2</option>
+                          <option value="16-2">16-2</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-12 grad-type fw-bold text-center my-1">
+                      <button type="submit" class=" hover-links btn border-secondary grad-type fw-bold text-center my-1  fs-4">Inscribirse</button>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-12">
+                      <p>Al inscribirse, usted acepta nuestros <a href="#">Términos y Condiciones</a>.</p>
+                  </div>
+              </div>
+          </form>
+      </div>
+      </section>
+    </main>
 
-
-
-
-        <script src="https://www.netlify.com/js/form-handler.min.js"></script>
+    <script src="https://www.netlify.com/js/form-handler.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('registrationForm');
-        const submitButton = document.getElementById('submitButton');
-        const formSuccessMessage = document.getElementById('formSuccessMessage');
     
-        const fields = {
-          nombre: {
-            element: document.getElementById('nombre'),
-            errorElement: document.getElementById('nombreError'),
-            validator: value => value.trim() !== '',
-            errorMessage: 'Por favor, ingrese su nombre.',
-            touched: false
-          },
-          apellido: {
-            element: document.getElementById('apellido'),
-            errorElement: document.getElementById('apellidoError'),
-            validator: value => value.trim() !== '',
-            errorMessage: 'Por favor, ingrese su apellido.',
-            touched: false
-          },
-          email: {
-            element: document.getElementById('email'),
-            errorElement: document.getElementById('emailError'),
-            validator: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-            errorMessage: 'Por favor, ingrese un email válido.',
-            touched: false
-          },
-          telefono: {
-            element: document.getElementById('telefono'),
-            errorElement: document.getElementById('telefonoError'),
-            validator: value => value.trim() !== '',
-            errorMessage: 'Por favor, ingrese su número de teléfono.',
-            touched: false
-          },
-          fecha: {
-            element: document.getElementById('fecha'),
-            errorElement: document.getElementById('fechaError'),
-            validator: value => value !== '',
-            errorMessage: 'Por favor, seleccione una fecha.',
-            touched: false
-          }
-        };
-    
-        Object.values(fields).forEach(field => {
-          field.element.addEventListener('blur', () => {
-            field.touched = true;
-            validateField(field);
-            validateForm();
-          });
-    
-          field.element.addEventListener('input', () => {
-            if (field.touched) {
-              validateField(field);
-              validateForm();
-            }
-          });
-        });
-    
-        form.addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent form submission
-          let allValid = true;
-    
-          Object.values(fields).forEach(field => {
-            field.touched = true;
-            if (!validateField(field)) {
-              allValid = false;
-            }
-          });
-    
-          if (allValid) {
-            formSuccessMessage.textContent = 'Formulario enviado con éxito.';
-            form.reset();
-            Object.values(fields).forEach(field => field.errorElement.textContent = '');
-            validateForm();
-          }
-        });
-    
-        function validateField(field) {
-          const value = field.element.value;
-          if (!field.validator(value)) {
-            field.errorElement.textContent = field.errorMessage;
-            field.errorElement.classList.add('text-white');
-            return false;
-          } else {
-            field.errorElement.textContent = '';
-            return true;
-          }
-        }
-    
-        function validateForm() {
-          const allValid = Object.values(fields).every(field => field.validator(field.element.value));
-          submitButton.disabled = !allValid;
-        }
-      });
-    </script>
-    
-</body>
+  </body>
 </html>
