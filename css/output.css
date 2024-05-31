@@ -8273,6 +8273,10 @@
     background-position: 100% 100%;
   }
 }
+body {
+  scroll-behavior: smooth;
+}
+
 img {
   width: 100%;
   height: auto;
